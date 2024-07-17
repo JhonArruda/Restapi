@@ -52,7 +52,7 @@ const Grid = ({ products, setproducts, setOnEdit }) => {
       .then(({ data }) => {
         const newArray = products.filter((product) => product.id !== id);
 
-        setUsers(newArray);
+        setproducts(newArray);
         toast.success(data);
       })
       .catch(({ data }) => toast.error(data));

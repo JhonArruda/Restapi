@@ -76,7 +76,7 @@ const Form = ({ getProducts, onEdit, setOnEdit }) => {
           id: product.id.value,
           descrição: product.descrição.value,
           preço: product.preço.value,
-          data_criação: user.data_criação.value,
+          data_criação: product.data_criação.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
@@ -87,7 +87,7 @@ const Form = ({ getProducts, onEdit, setOnEdit }) => {
           id: product.id.value,
           descrição: product.descrição.value,
           preço: product.preço.value,
-          data_criação: user.data_criação.value,
+          data_criação: product.data_criação.value,
         })
         .then(({ data }) => toast.success(data))
         .catch(({ data }) => toast.error(data));
