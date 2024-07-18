@@ -25,7 +25,6 @@ export const Th = styled.th`
   text-align: start;
   border-bottom: inset;
   padding-bottom: 5px;
-
   @media (max-width: 500px) {
     ${(props) => props.onlyWeb && "display: none"}
   }
@@ -35,13 +34,12 @@ export const Td = styled.td`
   padding-top: 15px;
   text-align: ${(props) => (props.alignCenter ? "center" : "start")};
   width: ${(props) => (props.width ? props.width : "auto")};
-
   @media (max-width: 500px) {
     ${(props) => props.onlyWeb && "display: none"}
   }
 `;
 
-const Grid = ({ products, setproducts, setOnEdit }) => {
+const Grid = ({ products, setProducts, setOnEdit }) => {
   const handleEdit = (item) => {
     setOnEdit(item);
   };
@@ -52,7 +50,7 @@ const Grid = ({ products, setproducts, setOnEdit }) => {
       .then(({ data }) => {
         const newArray = products.filter((product) => product.id !== id);
 
-        setproducts(newArray);
+        setProducts(newArray);
         toast.success(data);
       })
       .catch(({ data }) => toast.error(data));
